@@ -42,7 +42,9 @@ public class ProduitService {
 
     //supprimer un produit
     public void deleteProduit(int id){
-        produitRepository.deleteById(id);
+        if (selectedProduit(id) != null) {
+            produitRepository.deleteById(id);
+        }
     }
 
 }
